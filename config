@@ -412,6 +412,8 @@ set formfiller = spawn @scripts_dir/formfiller.sh
 # Tab navigating
 @cbind  <Ctrl><Tab>     = event NEXT_TAB
 @cbind  <Ctrl><Shift><Shift-Tab>     = event PREV_TAB
+@cbind  <Ctrl><Page_Down> = event NEXT_TAB
+@cbind  <Ctrl><Page_Up> = event PREV_TAB
 @cbind  g<              = event FIRST_TAB
 @cbind  g>              = event LAST_TAB
 @cbind  gt              = event NEXT_TAB
