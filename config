@@ -381,6 +381,8 @@ set follow_hint_keys = aoeuidhtns
 
 @cbind  '*  = spawn @scripts_dir/follow.sh \@< uzbl.follow.followTextContent("%s", 'click') >\@
 
+@cbind  yl*  = sh 'echo \'\@< uzbl.follow("\@follow_hint_keys", "%s", "returnuri")  >\@\' | sed s/XXXRETURNED_URIXXX// | xclip -i'
+
 # Form filler binds
 # This script allows you to configure (per domain) values to fill in form
 # fields (eg login information) and to fill in these values automatically.
@@ -434,6 +436,7 @@ set preset = event PRESET_TABS
 
 # Link context menu
 #menu_link_add Print Link = print \@SELECTED_URI
+menu_link_add Yank URL = sh "echo -n '\@SELECTED_URI' | xclip -i"
 
 # === Mode configuration =====================================================
 
